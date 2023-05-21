@@ -15,6 +15,7 @@ class VerticalTabs extends StatefulWidget {
   final Color indicatorColor;
   final bool disabledChangePageFromContentView;
   final Axis contentScrollAxis;
+  final Color tabPageBackground;
   final Color selectedTabBackgroundColor;
   final Color tabBackgroundColor;
   final TextStyle selectedTabTextStyle;
@@ -34,6 +35,7 @@ class VerticalTabs extends StatefulWidget {
       this.indicatorWidth = 3,
       this.indicatorSide,
       this.initialIndex = 0,
+      this.tabPageBackground=const Color(0xfff1f1f1),
       this.direction = TextDirection.ltr,
       this.indicatorColor = Colors.green,
       this.disabledChangePageFromContentView = false,
@@ -106,7 +108,7 @@ class _VerticalTabsState extends State<VerticalTabs>
     return Directionality(
       textDirection: widget.direction,
       child: Container(
-        color: widget.backgroundColor ?? Theme.of(context).canvasColor,
+        color: widget.tabPageBackground,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
